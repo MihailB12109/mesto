@@ -2,3 +2,9 @@
     max-width: 168.75px;
     border-radius: 120px;
 }
+
+@media screen and (max-width:670px) {
+    .avatar {
+        margin: 0px 99px 26px 101px;
+    }
+  }

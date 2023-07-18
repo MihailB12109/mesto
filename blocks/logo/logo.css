@@ -3,3 +3,8 @@
     max-height: 33px;
     margin-bottom: 41px;
 }
+@media screen and (max-width:900px) {
+    .logo {
+      margin-left:  27px;
+    }
+  }

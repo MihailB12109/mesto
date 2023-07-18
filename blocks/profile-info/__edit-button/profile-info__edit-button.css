@@ -10,3 +10,11 @@
     opacity: 0.6;
     cursor: pointer;
 }
+
+@media screen and (max-width:670px) {
+    .profile-info__edit-button {
+        max-width: 18px;
+        max-height: 18px;
+        margin-left: 10px;
+    }
+  }

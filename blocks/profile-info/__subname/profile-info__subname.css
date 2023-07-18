@@ -7,3 +7,14 @@
     line-height: 22px;
     letter-spacing: 0em;
 }
+@media screen and (max-width:670px){
+.profile-info__subname{
+    max-width: 282px;
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0em;
+margin: 14px 19px 36px 19px;
+text-align: center;
+}
+}
