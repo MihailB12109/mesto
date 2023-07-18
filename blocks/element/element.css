@@ -1,0 +1,7 @@
+.element{
+    background-color: white;
+    max-width: 282px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 120px 120px 42px;
+}
