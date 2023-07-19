@@ -1,7 +1,7 @@
 .popup__input {
     margin: 0;
     padding:0;
-    max-width: inherit;
+    width: inherit;
     border: none;
     border-bottom: 1px solid gray;
     font-size: 14px;
@@ -11,6 +11,6 @@
     padding-bottom: 13px;
 }
 
-.popup__input:first-child(1){
+.popup__input:first-of-type{
     margin-bottom: 30px;
 }
