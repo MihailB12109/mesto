@@ -4,24 +4,24 @@ display: grid;
 grid-template-columns: repeat(auto-fill,minmax(282px, 1fr));
 justify-items: center;
 gap: 20px 17px;
-margin: 0px 200px 50px 200px;
+margin: 0px 200px 66px 200px;
 }
 @media screen and (max-width:1100px) {
     .elements {
-        margin: 0px 100px 50px 100px;
+        margin: 0px 100px 66px 100px;
     }
   }
   
   @media screen and (max-width:900px) {
     .elements {
         margin: 0;
-      margin-bottom: 50px;
+      margin-bottom: 48px;
     }
   }
   
   @media screen and (max-width:500px) {
     .elements {
-        margin: 0 19px 50px 19px;
+        margin: 0 19px 48px 19px;
       max-width: 320px;
     }
   }
