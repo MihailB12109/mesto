@@ -1,4 +1,4 @@
-.profiles__add-button_icon{
+.profiles__icon{
     background-color: black;
     padding: 13px 63px;
     max-width: 22px;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width:670px) {
-    .profiles__add-button_icon {
+    .profiles__icon {
         padding: 13px 130px;
     }
   }
