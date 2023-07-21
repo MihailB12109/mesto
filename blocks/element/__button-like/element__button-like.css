@@ -7,6 +7,6 @@
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
-    grid-column-end: 3;
+    grid-row-end: 3;
     margin-top: 30px;
 }
