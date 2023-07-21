@@ -1,0 +1,12 @@
+.element__button-like{
+    margin:0;
+    padding:0;
+    border:none;
+    width: 22px;
+    height: 19px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    margin-top: 30px;
+}
