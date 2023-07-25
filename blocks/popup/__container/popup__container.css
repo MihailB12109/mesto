@@ -8,4 +8,13 @@
     padding:34px 36px 37px 36px;
     border-radius: 3%;
     background-color: #fff;
+    z-index: 9;
+  }
+
+  @media screen and (max-width:600px) {
+    .popup__container {
+      padding:25px 22px 25px 22px;
+      width: 236px;
+      height: 278px;
+    }
   }

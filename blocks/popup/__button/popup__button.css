@@ -12,3 +12,15 @@
     letter-spacing: 0em;
     margin-top: 48px;
 }
+
+@media screen and (max-width:600px) {
+    .popup__button {
+        padding: 0;
+        width: 232px;
+        height: 46px;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        margin-top: 45px;
+    }
+}

@@ -4,6 +4,7 @@
     max-height: 50px;
     border: 1px solid white;
     align-items: center;
+    max-width: 284px;
 }
 .profiles__add-button:hover{
     opacity: 0.6;
