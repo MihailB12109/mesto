@@ -5,10 +5,11 @@
     max-height: 24px;
     border:none;
     margin-left: 18px;
+    background: transparent;
+    cursor: pointer;
 }
 .profile-info__edit-button:hover{
     opacity: 0.6;
-    cursor: pointer;
 }
 
 @media screen and (max-width:670px) {

@@ -1,10 +1,11 @@
 .avatar{
-    max-width: 168.75px;
-    border-radius: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width:670px) {
     .avatar {
-        margin: 0px 99px 26px 101px;
+        margin: 0px auto 26px;
     }
   }
