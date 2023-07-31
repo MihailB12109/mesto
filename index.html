@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Mesto Russia</title>
+    <title lang="en">Mesto Russia</title>
 </head>
 
 <body class="body-style">
@@ -21,77 +21,63 @@
                     <div class="profile-info">
                         <div class="profile-info__block">
                             <h1 id="realName" class="profile-info__name">Жак-Ив Кусто</h1>
-                            <button id="openPopup" class="profile-info__edit-button">
-                                <img class="profile-info__icon" src="./images/Edit-Button.svg"
-                                    alt="Редактировать">
-                            </button>
+                            <button type="button" id="openPopup" class="profile-info__edit-button"> </button>
                         </div>
                         <p id="realData" class="profile-info__subname">Исследователь океана</p>
                     </div>
                 </div>
-                <button class="profiles__add-button">
-                    <img class="profiles__icon" src="./images/Add-Button1.svg" alt="Добавить">
-                </button>
+                <button type="button" class="profiles__add-button"></button>
             </section>
             <section class="elements">
                 <div class="element">
                     <img class="element__image" src="./images/Karachaevsk.png" alt="Карачаевск">
-                    <h2 class="element__name">Карачаевск</h2>   
-                    <button class="element__button-like" >
-                         <img class="element__like"  src="./images/Heart-white.svg">   
-                    </button>       
+                    <h2 class="element__name">Карачаевск</h2>
+                    <button class="element__button-like"></button>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Elbrus3.jpg" alt="Гора Эльбрус">
-                    <h2 class="element__name">Гора Эльбрус</h2>   
-                    <button class="element__button-like" >
-                        <img class="element__like"  src="./images/Heart-white.svg">   
-                   </button>            
+                    <h2 class="element__name">Гора Эльбрус</h2>
+                    <button class="element__button-like"></button>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Dombai1.jpg" alt="Домбай">
-                    <h2 class="element__name">Домбай</h2>   
-                    <button class="element__button-like" >
-                        <img class="element__like"  src="./images/Heart-white.svg">   
-                   </button>            
+                    <h2 class="element__name">Домбай</h2>
+                    <button class="element__button-like"></button>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Elbrus3.jpg" alt="Гора Эльбрус">
-                    <h2 class="element__name">Гора Эльбрус</h2>   
-                    <button class="element__button-like" >
-                        <img class="element__like"  src="./images/Heart-white.svg">   
-                   </button>             
+                    <h2 class="element__name">Гора Эльбрус</h2>
+                    <button class="element__button-like"></button>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Dombai1.jpg" alt="Домбай">
-                    <h2 class="element__name">Домбай</h2>   
-                    <button class="element__button-like" >
-                        <img class="element__like"  src="./images/Heart-white.svg">   
-                   </button>             
+                    <h2 class="element__name">Домбай</h2>
+                    <button class="element__button-like"></button>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Karachaevsk.png" alt="Карачаево-Черкессия">
-                    <h2 class="element__name">Карачаево-Черкессия</h2>   
-                    <button class="element__button-like">
-                        <img class="element__like" src="./images/Heart-white.svg">   
-                   </button>            
+                    <h2 class="element__name">Карачаево-Черкессия</h2>
+                    <button class="element__button-like"></button>
                 </div>
             </section>
             <footer class="footer">
-                <h2 class="footer__text">© 2023 Mesto Russia</h2>
+                <h2 lang="en" class="footer__text">© 2023 Mesto Russia</h2>
             </footer>
-             <div id="popup" class="popup"> 
+            <div id="popup" class="popup">
                 <div id="popup__container" class="popup__container">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" class="popup__input" id="userName" placeholder="Имя"/>
-                <input type="text" class="popup__input" id="userData" placeholder="О себе"/>
-                <button class="popup__button" id="savePopup"> Сохранить </button>
-                <i class="popup__close-icon" src="./images/Close-Icon.svg" id="closePopup"></i>
-              </div>
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <form name="inputForm" id="inputForm">
+                        <input type="text" class="popup__input" id="userName" name="Name" placeholder="Имя" />
+                        <input type="text" class="popup__input" id="userData" name="Data" placeholder="О себе" />
+                    <button type="submit" class="popup__button" id="savePopup"> Сохранить </button>
+                </form>
+                    <button type="button" class="popup__close-icon" src="./images/Close-Icon.svg"
+                        id="closePopup"></button>
+                </div>
             </div>
         </main>
     </div>
-    <script src="./js/script.js"></script>
+    <script defer src="./scripts/script.js"></script>
 </body>
 
 </html>
