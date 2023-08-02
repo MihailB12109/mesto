@@ -9,37 +9,24 @@ const jobInput = document.querySelector("#userData");
 let nameReal = document.querySelector("#realName");
 let jobReal = document.querySelector("#realData");
 
-function openPopup() {
+function openPopup(evt) {
     nameInput.value = nameReal.textContent;
     jobInput.value = jobReal.textContent;
-    popupElement.classList.remove("popup");
-    popupElement.classList.add("popup_opened");
+    popupElement.classList.remove("popup_opened");
 }
 // Обработчик «отправки» формы, хотя пока 
 // она никуда отправляться не будет 
 function savePopup(evt) {
     evt.preventDefault();
     // Получите значение полей jobInput и nameInput из свойства value 
-    const nameForm = nameInput.value;
-    const jobForm = jobInput.value;
-
-    // Выберите элементы, куда должны быть вставлены значения полей 
-    const nameOutput = nameReal;
-    const jobOutput = jobReal;
-
-    // Вставьте новые значения с помощью textContent 
-    nameOutput.textContent = nameForm;
-    jobOutput.textContent = jobForm;
-
-    popupElement.classList.remove("popup_opened");
-    popupElement.classList.add("popup");
+    nameReal.textContent = nameInput.value;
+    jobReal.textContent = jobInput.value;
+    closePopup();
 }
 
-function closePopup() {
-    popupElement.classList.remove("popup_opened");
-    popupElement.classList.add("popup");
+function closePopup(evt) {
+    popupElement.classList.add("popup_opened");
 }
-
 
 openPopupButton.addEventListener("click", openPopup);
 // Прикрепляем обработчик к форме: 
