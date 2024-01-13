@@ -1,36 +1,57 @@
-const openPopupButton = document.querySelector("#openPopup");
-const savePopupButton = document.querySelector("#savePopup");
-const closePopupButton = document.querySelector("#closePopup");
-const popupElement = document.getElementById("popup");
-const form = document.querySelector("#inputForm");
-const nameInput = document.querySelector("#userName");
-const jobInput = document.querySelector("#userData");
+const openPopupButton = document.querySelector("#openPopup"); // кнопка открытия попапа редактирования профиля 
+const savePopupButton = document.querySelector("#savePopup");  
+const closePopupButton = document.querySelector("#closePopup"); 
+const closeAddButton = document.querySelector("#closeAddPopup");
+const popupElement = document.getElementById("popup"); // попап редактирования профиля 
+const form = document.querySelector("#inputForm"); 
+const nameInput = document.querySelector("#userName"); 
+const jobInput = document.querySelector("#userData"); 
 
-let nameReal = document.querySelector("#realName");
-let jobReal = document.querySelector("#realData");
+const openAddCard = document.querySelector("#openAddPopup"); //  кнопка добавления карточки 
+const addCard = document.getElementById("addPopup"); // попап добавления карточек 
 
-function openPopup(evt) {
-    nameInput.value = nameReal.textContent;
-    jobInput.value = jobReal.textContent;
-    popupElement.classList.remove("popup_opened");
-}
-// Обработчик «отправки» формы, хотя пока 
-// она никуда отправляться не будет 
-function savePopup(evt) {
-    evt.preventDefault();
-    // Получите значение полей jobInput и nameInput из свойства value 
-    nameReal.textContent = nameInput.value;
-    jobReal.textContent = jobInput.value;
-    closePopup();
+let nameReal = document.querySelector("#realName"); 
+let jobReal = document.querySelector("#realData"); 
+
+function openAddPopup(evt) {
+  addCard.classList.remove("popup_opened");
 }
 
-function closePopup(evt) {
+function openPopup(evt) { 
+  nameInput.value = nameReal.textContent; 
+  jobInput.value = jobReal.textContent; 
+  popupElement.classList.remove("popup_opened"); 
+} 
+
+// Обработчик «отправки» формы, хотя пока  
+// она никуда отправляться не будет  
+function savePopup(evt) { 
+  evt.preventDefault(); 
+  // Получаем значение полей jobInput и nameInput из свойства value  
+  nameReal.textContent = nameInput.value; 
+  jobReal.textContent = jobInput.value; 
+  closeAllPopups(); 
+} 
+
+function closeAllPopups() {
     popupElement.classList.add("popup_opened");
-}
+    addCard.classList.add("popup_opened");
+  }
+  
 
-openPopupButton.addEventListener("click", openPopup);
-// Прикрепляем обработчик к форме: 
-// он будет следить за событием “submit” - «отправка» 
-form.addEventListener("submit", savePopup);
-closePopupButton.addEventListener("click", closePopup);
+openPopupButton.addEventListener("click", openPopup); // Прикрепляем обработчик для открытия попапа редактирования профиля
+openAddCard.addEventListener("click", openAddPopup); // Прикрепляем обработчик для открытия попапа добавления карточки
+form.addEventListener("submit", savePopup); // Прикрепляем обработчик к форме для отправки
 
+document.addEventListener('click', function(event) {  
+    if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close-icon')) {  
+      closeAllPopups();  
+    }  
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+      closeAllPopups();
+    }
+  });
+  
