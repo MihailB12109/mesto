@@ -95,6 +95,11 @@ function createCardElement(name, image) {
   const likeButton = document.createElement('button'); 
   likeButton.classList.add('element__button-like'); 
   card.appendChild(likeButton); 
+
+  // Добавляем кнопку удаления
+  const trashButton = document.createElement('button');
+  trashButton.classList.add('element__button-trash');
+  card.appendChild(trashButton);
    
   return card; 
 }
