@@ -6,6 +6,8 @@ const popupElement = document.getElementById("popup"); // попап редак�
 const form = document.querySelector("#inputForm"); 
 const nameInput = document.querySelector("#userName"); 
 const jobInput = document.querySelector("#userData"); 
+const likeButtons = document.querySelectorAll('.element__button-like');
+const trashButtons = document.querySelectorAll('.element__button-trash')
 
 const openAddCard = document.querySelector("#openAddPopup"); //  кнопка добавления карточки 
 const addCard = document.getElementById("addPopup"); // попап добавления карточек 
@@ -90,10 +92,12 @@ function createCardElement(name, image) {
   cardTitle.classList.add('element__name'); 
   cardTitle.textContent = name; 
   card.appendChild(cardTitle); 
+
    
   // Добавляем кнопку-лайк 
   const likeButton = document.createElement('button'); 
-  likeButton.classList.add('element__button-like'); 
+  likeButton.classList.add('element__button-like');
+  likeButton.addEventListener('click', likeClick);
   card.appendChild(likeButton); 
 
   // Добавляем кнопку удаления
@@ -103,3 +107,14 @@ function createCardElement(name, image) {
    
   return card; 
 }
+
+likeButtons.forEach(function(button) {
+  button.addEventListener('click', likeClick);
+});
+
+
+function likeClick(event) {
+  const likeButton = event.target;
+  likeButton.classList.toggle('element__button-like_active');
+}
+
