@@ -7,7 +7,17 @@ const form = document.querySelector("#inputForm");
 const nameInput = document.querySelector("#userName"); 
 const jobInput = document.querySelector("#userData"); 
 const likeButtons = document.querySelectorAll('.element__button-like');
-const trashButtons = document.querySelectorAll('.element__button-trash')
+const trashButtons = document.querySelectorAll('.element__button-trash');
+
+const images = document.querySelectorAll('.element__image');
+const popupMax = document.querySelector('.popupMax');
+const popupMaxImage = document.querySelector('.popupMax__image');
+const closeMaxButton = document.querySelector('.popupMax__close-button');
+const popupMaxTitle = document.querySelector('.popupMax__title');
+
+
+
+
 
 const openAddCard = document.querySelector("#openAddPopup"); //  кнопка добавления карточки 
 const addCard = document.getElementById("addPopup"); // попап добавления карточек 
@@ -104,7 +114,11 @@ function createCardElement(name, image) {
   const trashButton = document.createElement('button');
   trashButton.classList.add('element__button-trash');
   card.appendChild(trashButton);
-   
+
+  // Добавляем увеличение картинки для новых карточек
+  cardImageElem.addEventListener('click', ()=>
+  openImage(cardImageElem));
+
   return card; 
 }
 
@@ -118,3 +132,20 @@ function likeClick(event) {
   likeButton.classList.toggle('element__button-like_active');
 }
 
+images.forEach(image => {
+  image.addEventListener('click', ()=>
+  openImage(image));
+});
+
+
+function openImage(image) {
+  const imageUrl = image.getAttribute('src');
+    const imageTitle = image.parentElement.querySelector('h2').textContent;
+    popupMaxImage.setAttribute('src', imageUrl);
+    popupMaxTitle.textContent = imageTitle;
+    popupMax.style.display = 'flex';
+}
+
+closeMaxButton.addEventListener('click', () => {
+  popupMax.style.display = 'none';
+});
