@@ -1,6 +1,34 @@
 .popupMax__container{
+    margin:0;
+    padding:0;
 position: relative;
 margin-top: 50px;
-max-width: 816px;
-max-height: 562px;
 }
+
+@media screen and (max-width:1100px) {
+    .popupMax__container{
+      max-width: 713px;
+    }
+  }
+  
+  @media screen and (max-width:900px) {
+    .popupMax__container {
+      max-width: 606px;
+    }
+  }
+  @media screen and (max-width:850px) {
+    .popupMax__container {
+      max-width: 504px;
+    }
+  }
+  @media screen and (max-width:600px) {
+    .popupMax__container {
+      max-width: 350px;
+    }
+  }
+  
+  @media screen and (max-width:500px) {
+    .popupMax__container {
+      max-width: 282px;
+    }
+  }
