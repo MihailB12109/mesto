@@ -10,7 +10,7 @@ const likeButtons = document.querySelectorAll('.element__button-like');
 const trashButtons = document.querySelectorAll('.element__button-trash');
 
 const images = document.querySelectorAll('.element__image');
-const popupMax = document.querySelector('.popupMax');
+const popupMax = document.getElementById('popupMax');
 const popupMaxImage = document.querySelector('.popupMax__image');
 const closeMaxButton = document.querySelector('.popupMax__close-button');
 const popupMaxTitle = document.querySelector('.popupMax__title');
@@ -26,13 +26,17 @@ let nameReal = document.querySelector("#realName");
 let jobReal = document.querySelector("#realData"); 
 
 function openAddPopup(evt) {
-  addCard.classList.remove("popup_opened");
+  addCard.classList.remove('popup');
+  addCard.classList.remove('popup_hidden');
+  addCard.classList.add("popup_opened");
 }
 
 function openPopup(evt) { 
   nameInput.value = nameReal.textContent; 
   jobInput.value = jobReal.textContent; 
-  popupElement.classList.remove("popup_opened"); 
+  popupElement.classList.remove('popup');
+  popupElement.classList.remove('popup_hidden');
+  popupElement.classList.add("popup_opened"); 
 } 
 
 // Обработчик «отправки» формы, хотя пока  
@@ -45,27 +49,47 @@ function savePopup(evt) {
   closeAllPopups(); 
 } 
 
-function closeAllPopups() {
-    popupElement.classList.add("popup_opened");
-    addCard.classList.add("popup_opened");
-  }
-  
+function closeAllPopups() { 
+  if(popupElement.classList.contains('popup_opened')) { 
+      popupElement.classList.add('popup'); 
+      popupElement.classList.remove('popup_opened'); 
+      setTimeout(() => { 
+          popupElement.classList.add('popup_hidden'); 
+      }, 300);  
+  } 
+ else if(addCard.classList.contains('popup_opened')) { 
+      addCard.classList.remove("popup_opened"); 
+      addCard.classList.add('popup'); 
+      setTimeout(() => { 
+          addCard.classList.add('popup_hidden'); 
+      }, 300);  
+  } 
+  else if(popupMax.classList.contains('popupMax')) {  
+    popupMax.classList.remove("popupMax");
+    popupMax.classList.add('popup'); 
+      setTimeout(() => { 
+          popupMax.classList.add('popup_hidden'); 
+      }, 300); 
+    };
+     
+  } 
+
 
 openPopupButton.addEventListener("click", openPopup); // Прикрепляем обработчик для открытия попапа редактирования профиля
 openAddCard.addEventListener("click", openAddPopup); // Прикрепляем обработчик для открытия попапа добавления карточки
 form.addEventListener("submit", savePopup); // Прикрепляем обработчик к форме для отправки
-
-document.addEventListener('click', function(event) {  
-    if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close-icon')) {  
-      closeAllPopups();  
-    }  
-  });
 
   document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
       closeAllPopups();
     }
   });
+  
+document.addEventListener('click', function(event) {  
+  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close-icon')) {  
+    closeAllPopups();  
+  }  
+});
 
 
 // Создаем обработчик события submit для формы 
@@ -81,7 +105,6 @@ document.querySelector('#addForm').addEventListener('submit', function(event) {
   // Добавляем новую карточку в начало контейнера 
   const cardsContainer = document.querySelector('.elements'); 
   cardsContainer.insertBefore(newCard, cardsContainer.firstElementChild); 
- 
   // Очищаем форму после добавления
   document.getElementById('addForm').reset(); 
   closeAllPopups();
@@ -119,7 +142,8 @@ function createCardElement(name, image) {
   cardImageElem.addEventListener('click', ()=>
   openImage(cardImageElem));
 
-  return card; 
+
+  return card;
 }
 
 likeButtons.forEach(function(button) {
@@ -134,18 +158,19 @@ function likeClick(event) {
 
 images.forEach(image => {
   image.addEventListener('click', ()=>
-  openImage(image));
+  openImage(image))
 });
 
 
-function openImage(image) {
+function openImage(image ) {
   const imageUrl = image.getAttribute('src');
     const imageTitle = image.parentElement.querySelector('h2').textContent;
     popupMaxImage.setAttribute('src', imageUrl);
     popupMaxTitle.textContent = imageTitle;
-    popupMax.style.display = 'flex';
-}
+    popupMax.classList.remove('popup');
+    popupMax.classList.remove('popup_hidden');
+    popupMax.classList.add('popupMax');
+} 
 
-closeMaxButton.addEventListener('click', () => {
-  popupMax.style.display = 'none';
-});
+closeMaxButton.addEventListener('click', closeAllPopups);
+
