@@ -43,7 +43,7 @@ function checkForm(newName,newEmail) {
    
   if (newEmail.value === '') { 
     dataError.textContent = 'Пожалуйста, введите адрес!'; 
-    newEmail.style.marginBottom = '19px'; 
+    newEmail.style.marginBottom = '14px'; 
     isValid = false; 
   }
   if (newName.value !== '') { 
@@ -54,11 +54,11 @@ function checkForm(newName,newEmail) {
    
   if (newEmail.value !== '') { 
     dataError.textContent = ''; 
-    newEmail.style.marginBottom = '34px'; 
+    newEmail.style.marginBottom = '28px'; 
     isValid = false; 
   }
    if (newName.value !== '' & newEmail.value !== '' ){
-isValid = true;}
+    isValid = true;}
   return isValid;
 }
 
@@ -131,7 +131,7 @@ function closeAllPopups() {
       }
       if (newEmail !== '') {
         dataError.textContent = '';
-        newEmail.style.marginBottom = '34px'; 
+        newEmail.style.marginBottom = '28px'; 
       }
   } 
   else if (popupMax.classList.contains('popupMax')) {  
