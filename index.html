@@ -74,7 +74,7 @@
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <form name="inputForm" id="inputForm">
                         <input type="text" class="popup__input" id="userName" name="Name" placeholder="Имя">
-                        <input type="text" class="popup__input" id="userData" name="Data" placeholder="О себе">
+                        <input type="text" class="popup__input2" id="userData" name="Data" placeholder="О себе">
                         <button type="submit" class="popup__button" id="savePopup"> Сохранить </button>
                     </form>
                     <button type="button" class="popup__close-icon" id="closePopup"></button>
@@ -83,17 +83,23 @@
             <div id="addPopup"  class="popup popup_hidden">
                 <div id="addPopup__container" class="popup__container">
                     <h2 class="popup__title">Новое место</h2>
-                    <form name="addForm" id="addForm">
-                        <input type="text" class="popup__input" id="cardName" name="Name" placeholder="Название">
-                        <input type="text" class="popup__input" id="cardData" name="Data" placeholder="Ссылка на картинку">
-                        <button type="submit" class="popup__button" id="savePopup"> Сохранить </button>
+                    <form name="addForm" id="addForm">  
+                        <div> 
+                            <input type="text" class="popup__input" id="cardName" name="Name" placeholder="Название">
+                            <p id="nameError" class="error-message"></p>
+                        </div>
+                        <div>
+                            <input type="text" class="popup__input2" id="cardData" name="Data" placeholder="Ссылка на картинку">
+                            <p id="dataError" class="error-message2"></p>
+                        </div>
+                      <button type="submit" class="popup__button" id="savePopup"> Сохранить </button>
                     </form>
                     <button type="button" class="popup__close-icon" id="closeAddPopup"></button>
                 </div>
             </div>
             <div id="popupMax" class="popup popup_hidden">
                 <div class="popupMax__container">
-                    <button class="popupMax__close-button"></button>
+                    <button type="button" class="popupMax__close-button"></button>
                     <div>
                         <img src="" alt="" class="popupMax__image">
                     </div>
