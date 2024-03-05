@@ -26,7 +26,7 @@
                         <p id="realData" class="profile-info__subname">Исследователь океана</p>
                     </div>
                 </div>
-                <button id = "openAddPopup" type="button" class="profiles__add-button"></button>
+                <button id="openAddPopup" type="button" class="profiles__add-button"></button>
             </section>
             <section class="elements">
                 <div class="element">
@@ -80,19 +80,21 @@
                     <button type="button" class="popup__close-icon" id="closePopup"></button>
                 </div>
             </div>
-            <div id="addPopup"  class="popup popup_hidden">
+            <div id="addPopup" class="popup popup_hidden">
                 <div id="addPopup__container" class="popup__container">
                     <h2 class="popup__title">Новое место</h2>
-                    <form name="addForm" id="addForm">  
-                        <div> 
-                            <input type="text" class="popup__input" id="cardName" name="Name" placeholder="Название" autocomplete="off">
+                    <form name="addForm" id="addForm">
+                        <div>
+                            <input type="text" class="popup__input" id="cardName" name="Name" placeholder="Название"
+                                autocomplete="off">
                             <p id="nameError" class="error-message"></p>
                         </div>
                         <div>
-                            <input type="text" class="popup__input2" id="cardData" name="Data" placeholder="Ссылка на картинку" autocomplete="off">
+                            <input type="text" class="popup__input2" id="cardData" name="Data"
+                                placeholder="Ссылка на картинку" autocomplete="off">
                             <p id="dataError" class="error-message2"></p>
                         </div>
-                      <button type="submit" class="popup__button" id="savePopup"> Сохранить </button>
+                        <button type="submit" class="popup__button" id="savePopup"> Сохранить </button>
                     </form>
                     <button type="button" class="popup__close-icon" id="closeAddPopup"></button>
                 </div>
@@ -105,7 +107,7 @@
                     </div>
                     <h3 class="popupMax__title"></h3>
                 </div>
-              </div>
+            </div>
         </main>
     </div>
     <script defer type="module" src="./scripts/index.js"></script>
