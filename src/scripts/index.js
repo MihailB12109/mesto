@@ -1,6 +1,6 @@
 import { createCardElement, likeClick } from './card.js';
 import { openAddPopup, openPopup, savePopup, closeAllPopups } from './modal.js';
-
+import '/src/pages/index.css';
 const openPopupButton = document.querySelector("#openPopup"); // кнопка открытия попапа редактирования профиля 
 
 const form = document.querySelector("#inputForm");
