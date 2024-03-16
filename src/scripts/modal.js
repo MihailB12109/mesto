@@ -1,4 +1,5 @@
-
+import {newName} from './index'
+import {newEmail} from './index'
 const addCard = document.getElementById("addPopup");
 const nameInput = document.querySelector("#userName");
 const jobInput = document.querySelector("#userData");

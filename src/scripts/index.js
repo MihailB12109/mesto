@@ -23,8 +23,8 @@ deleteButton.forEach((deleteBtn, index) => {
 
 const openAddCard = document.querySelector("#openAddPopup"); //  кнопка добавления карточки 
 
-const newName = document.getElementById('cardName');
-const newEmail = document.getElementById('cardData');
+export const newName = document.getElementById('cardName');
+export const newEmail = document.getElementById('cardData');
 
 function checkForm(newName, newEmail) {
   let isValid = true;
