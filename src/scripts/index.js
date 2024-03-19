@@ -6,19 +6,10 @@ const openPopupButton = document.querySelector("#openPopup"); // кнопка о
 const form = document.querySelector("#inputForm");
 const addForm = document.getElementById('addForm');
 const likeButtons = document.querySelectorAll('.element__button-like');
-const cardsContainer = document.querySelector('.elements');
 const popupMaxImage = document.querySelector('.popupMax__image');
 const popupMaxTitle = document.querySelector('.popupMax__title');
 const images = document.querySelectorAll('.element__image');
 const closeMaxButton = document.querySelector('.popupMax__close-button');
-const deleteButton = document.querySelectorAll('.element__button-trash');
-const elemCard = document.querySelectorAll('.element');
-
-deleteButton.forEach((deleteBtn, index) => {
-  deleteBtn.addEventListener('click', function () {
-    elemCard[index].remove();
-  });
-});
 
 
 const openAddCard = document.querySelector("#openAddPopup"); //  кнопка добавления карточки 
@@ -66,26 +57,16 @@ addForm.addEventListener('submit', function (event) {
   const newEmailValue = document.getElementById('cardData').value;
 
   if (checkForm(newName, newEmail)) {
-    // Создаем новую карточку
-    const newCard = createCardElement(newNameValue, newEmailValue);
+    createCardElement(newNameValue, newEmailValue); 
+closeAllPopups();
 
-    // Добавляем новую карточку в начало контейнера
-    cardsContainer.insertBefore(newCard, cardsContainer.firstElementChild);
-
-
-    const trashButton = newCard.querySelector('.element__button-trash');
-
-    // Добавляем обработчик события клика на кнопку удаления
-    trashButton.addEventListener('click', function () {
-      newCard.remove();
-    });
-    // Очищаем форму после добавления
-    addForm.reset();
-    closeAllPopups();
   } else {
 
-  }
+  } 
 });
+
+
+
 
 openPopupButton.addEventListener("click", openPopup); // Прикрепляем обработчик для открытия попапа редактирования профиля
 openAddCard.addEventListener("click", openAddPopup); // Прикрепляем обработчик для открытия попапа добавления карточки

@@ -1,37 +1,32 @@
-import { openImage } from "./index.js";
+import { openImage } from "./index";
+const cardsContainer = document.querySelector('.elements');
+
+cardsContainer.addEventListener('click', function(event) {
+  if (event.target.classList.contains('element__button-trash')) {
+      const cardToRemove = event.target.closest('.element');
+      cardToRemove.remove();
+  }
+});
 
 export function createCardElement(name, image) {
-    // Создаем HTML-элемент для карточки 
-    const card = document.createElement('div');
-    card.classList.add('element');
-    // изображение
-    const cardImageElem = document.createElement('img');
-    cardImageElem.classList.add('element__image');
-    cardImageElem.src = image;
-    cardImageElem.alt = name;
-    card.appendChild(cardImageElem);
-    // Название
-    const cardTitle = document.createElement('h2');
-    cardTitle.classList.add('element__name');
-    cardTitle.textContent = name;
-    card.appendChild(cardTitle);
+    const cardTemplate = document.querySelector('#card-template');  
+    const cardClone = document.importNode(cardTemplate.content, true);  
+    cardClone.querySelector('.element__image').src = image;
+    cardClone.querySelector('.element__name').textContent = name;
 
-    // Добавляем кнопку-лайк 
-    const likeButton = document.createElement('button');
-    likeButton.classList.add('element__button-like');
-    likeButton.addEventListener('click', likeClick);
-    card.appendChild(likeButton);
+    cardsContainer.insertBefore(cardClone, cardsContainer.firstElementChild);
 
-    // Добавляем кнопку удаления
-    const trashButton = document.createElement('button');
-    trashButton.classList.add('element__button-trash');
-    card.appendChild(trashButton);
+    const likeButtons = document.querySelectorAll('.element__button-like');
+    const images = document.querySelectorAll('.element__image');
 
-    // Добавляем увеличение картинки для новых карточек
-    cardImageElem.addEventListener('click', () =>
-        openImage(cardImageElem));
+    likeButtons.forEach(function (button) {
+      button.addEventListener('click', likeClick);
+    });
 
-    return card;
+    images.forEach(image => {
+      image.addEventListener('click', () =>
+        openImage(image))
+    });
 }
 
 export function likeClick(event) {
